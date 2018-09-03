@@ -1,8 +1,21 @@
 'use strict'
 
+const mongoose = require('mongoose');
+const User = mongoose.model('User');
+
 exports.post = (req, res, next)=>{
     console.log("entrou aqui post");
-    res.status(201).send(req.bady);
+    var user = new User(req.bady);
+    var result = user.save().then(x => {
+        res.status(201).send({
+            message: 'Cadastro realizado'
+        });
+    }).catch(e => {
+        res.status(400).send({
+            message: 'Erro ao cadastrar',
+            data: e
+        });
+    });
 }
 
 exports.put = (req, res, next)=>{
