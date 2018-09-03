@@ -32,3 +32,16 @@ exports.delete = (req, res, next)=>{
     console.log("entrou deletar");
 }
 
+
+exports.get = (req, res, next)=>{
+    User.find({}).then(x => {
+        res.status(200).send({
+            message: 'Usuário encontrado'
+        });
+    }).catch(e => {
+        res.status(400).send({
+            message: 'Erro ao buscar',
+            data: e
+        });
+    });
+}
