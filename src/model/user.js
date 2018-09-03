@@ -9,14 +9,17 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
     nome: {
         type: String,
+        required: true,
         trim: true
     },
     username: {
         type: String,
+        required: true,
         trim: true
     },
     password: {
         type: String,
+        required: true,
         trim: true
     },
     email: {
