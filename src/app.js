@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 const router = express.Router();
 //conexão do banco
-mongoose.connect('mongodb://ifpb:ifpb1234@ds141812.mlab.com:41812/mapaedu');
+mongoose.connect('mongodb://ifpb:ifpb1234@ds141812.mlab.com:41812/mapaedu', { useNewUrlParser: true });
 
 //models
 const User = require('./model/user');
@@ -26,3 +26,4 @@ app.use('/user', user);
 app.use('/', index);
 
 module.exports = app;
+
