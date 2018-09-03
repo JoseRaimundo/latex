@@ -5,7 +5,7 @@ const User = mongoose.model('User');
 
 exports.post = (req, res, next)=>{
     console.log("entrou aqui post");
-    var user = new User(req.bady);
+    var user = new User(req.body);
     var result = user.save().then(x => {
         res.status(201).send({
             message: 'Cadastro realizado'
@@ -23,7 +23,7 @@ exports.put = (req, res, next)=>{
     console.log("entrou put");
     res.status(201).send({
         id: id,
-        user: req.bady
+        user: req.body
     });
 }
 
