@@ -6,7 +6,7 @@ const User = mongoose.model('User');
 exports.post = (req, res, next)=>{
     console.log("entrou aqui post");
     var user = new User(req.bady);
-    user.save().then(x => {
+    var result = user.save().then(x => {
         res.status(201).send({
             message: 'Cadastro realizado'
         });
