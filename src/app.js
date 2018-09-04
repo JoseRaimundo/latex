@@ -7,7 +7,9 @@ const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
-//conexão do banco
+//conexão do banco local
+//mongoose.connect('mongodb://localhost:27017/mapaedu', { useNewUrlParser: true });
+//conexão do banco online
 mongoose.connect('mongodb://ifpb:ifpb1234@ds141812.mlab.com:41812/mapaedu', { useNewUrlParser: true });
 
 //models
