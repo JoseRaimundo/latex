@@ -23,3 +23,7 @@ Em breve.
 Ministrante:
 
 	jsraimundob@gmail.com
+
+### Apenas para Programadores
+
+**Aviso:** Esse repositório foi reciclado a partir do repositório *mapaedu*.
